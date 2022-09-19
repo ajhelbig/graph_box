@@ -30,7 +30,7 @@ int main(void)
         EndDrawing();
 
         //++seed;
-        ++numNodes;
+        if(++numNodes > 16) numNodes = 1;
     }
 
     CloseWindow();

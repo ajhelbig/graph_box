@@ -2,12 +2,19 @@
 
 clear
 
-echo "----------CHECKOUT----------"
+echo "----------run.sh----------"
 
 echo "----------CONFIG----------"
 
-cd build
-cmake ..
+if [ -d "build" ]
+then
+	cd build
+	cmake ..
+
+else
+	mkdir build && cd build
+	cmake ..
+fi
 
 echo "----------CONFIG----------"
 
