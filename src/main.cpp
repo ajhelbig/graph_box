@@ -10,14 +10,20 @@ int main(void)
 
     SetTargetFPS(1);
 
-    //Complete_Graph g(screenWidth, screenHeight, 10, 5.0, 6, 11, true);
+    Complete_Graph g1(screenWidth, screenHeight, 10, 5.0, 2, 7, false);
+    Complete_Graph g2(screenWidth, screenHeight, 10, 5.0, 2, 7, false);
+
+    // Grid_Graph g1(screenWidth, screenHeight, 50, 5.0);
+    // Grid_Graph g2(screenWidth, screenHeight, 50, 5.0);
+
+    g1.findMST();
 
     //int seed = 1;
-    int numNodes = 1;
+    //int numNodes = 1;
 
     while (!WindowShouldClose())
     {
-        Complete_Graph g(screenWidth, screenHeight, 10, 5.0, 0, numNodes, true);
+        //Complete_Graph g(screenWidth, screenHeight, 10, 5.0, 0, numNodes, true);
 
         BeginDrawing();
 
@@ -25,12 +31,14 @@ int main(void)
 
             //DrawFPS(0,0);
 
-            g.drawGraph();
+            g2.drawGraph();
+
+            g1.drawGraph();
 
         EndDrawing();
 
         //++seed;
-        if(++numNodes > 16) numNodes = 1;
+        //if(++numNodes > 16) numNodes = 1;
     }
 
     CloseWindow();

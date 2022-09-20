@@ -3,8 +3,8 @@
 Grid_Graph::Grid_Graph(const int swidth, const int sheight, int dim, float radius)
 {
 
-	int width = ( swidth / dim ) + dim;
-	int height = ( sheight / dim ) + dim;
+	int width = ( swidth / dim ) - 1;
+	int height = ( sheight / dim ) - 1;
 
 	this->nodes.reserve(height);
 
@@ -16,7 +16,7 @@ Grid_Graph::Grid_Graph(const int swidth, const int sheight, int dim, float radiu
 
 		for(int j = 0; j < width; ++j)
 		{
-			this->nodes[i].emplace_back((j * dim), (i * dim), radius);
+			this->nodes[i].emplace_back(((j + 1) * dim), ((i + 1) * dim), radius);
 			this->nodes[i][j].adjLis.reserve(4);
 		}
 

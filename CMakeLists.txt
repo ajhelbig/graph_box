@@ -7,5 +7,7 @@ project(ProjectName
 
 set(CMAKE_POLICY_DEFAULT_CMP0072 NEW)
 
+set(CMAKE_CXX_STANDARD 11)
+
 add_subdirectory(external)
 add_subdirectory(src)
