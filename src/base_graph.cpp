@@ -21,10 +21,10 @@ void Node::drawEdges(bool solved)
 
 }
 
-void Graph::drawGraph()
+void Graph::drawGraph(bool draw_both)
 {
 
-	if(this->solved)
+	if(draw_both)
 	{
 		for(auto row : this->nodes)
 			for(auto node : row)
@@ -45,7 +45,7 @@ double dist(const Node n1, const Node n2)
 	return std::sqrt( ( (n1.x - n2.x) * (n1.x - n2.x) ) + ( (n1.y - n2.y) * (n1.y - n2.y) ) );
 }
 
-std::pair<double, Node*> findNN(Node &node)
+std::pair<double, Node*> Graph::findNN(Node &node)
 {	
 	Node* nearestNode = nullptr;
 	double shortest_dist = std::numeric_limits<double>::infinity();
@@ -67,7 +67,7 @@ std::pair<double, Node*> findNN(Node &node)
 	return std::pair<double, Node*> (shortest_dist, nearestNode);
 }
 
-void Graph::findMST()
+void Graph::findMST(bool shuffle_tree)
 {
 	std::vector<Node*> mst;
 
@@ -76,6 +76,10 @@ void Graph::findMST()
 
 	while(mst.size() < this->numNodes)
 	{
+
+		if(shuffle_tree)
+			std::random_shuffle(mst.begin(), mst.end());
+
 		//finding the node nearest the mst
 		Node *nearestNode = nullptr;
 		Node *nodeNearest = nullptr;
@@ -84,7 +88,7 @@ void Graph::findMST()
 		for(int i = 0; i < mst.size(); ++i)
 		{	
 			
-			std::pair<double, Node*> NN (findNN(*mst[i]));
+			std::pair<double, Node*> NN (this->findNN(*mst[i]));
 
 			if(NN.first < shortest_dist)
 			{	

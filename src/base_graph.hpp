@@ -6,7 +6,6 @@
 #include <utility>
 #include <algorithm>
 #include <math.h>
-#include <unordered_map>
 #include <cmath>
 #include "raylib.h"
 
@@ -36,11 +35,14 @@ public:
 
 	bool solved = false;
 	int numNodes = 0;
+	int seed = 0;
 
 	std::vector<std::vector<Node>> nodes;
 
-	void drawGraph();
+	void drawGraph(bool draw_both = true);
 
-	void findMST();
+	std::pair<double, Node*> findNN(Node &node);
+
+	void findMST(bool shuffle_tree = false);
 
 };

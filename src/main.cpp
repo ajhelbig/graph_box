@@ -14,15 +14,17 @@ int main(void)
 
     while (!WindowShouldClose())
     {
-        Complete_Graph g1(screenWidth, screenHeight, 10, 5.0, seed, false, 7);
+        //Complete_Graph g1(screenWidth, screenHeight, 10, 5.0, true, seed, 8);
+        Grid_Graph g1(screenWidth, screenHeight, 100, 5.0);
 
-        g1.findMST();
+
+        g1.findMST(true);
 
         BeginDrawing();
 
             ClearBackground(BLACK);
 
-            g1.drawGraph();
+            g1.drawGraph(false);
 
         EndDrawing();
 
