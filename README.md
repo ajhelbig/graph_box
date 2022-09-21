@@ -10,5 +10,5 @@ Graphs, graph algorithms and graph visualizations all in one sandbox.
   - Generates an N node graph with node x,y coordinates corresponding to points on an N-gon or random non-repeating x,y coordinates within the windows height and width.
   - Each nodes adjacency list is populated with every other node in the graph.
   
-- ### Naive Minimum Spanning Tree Solver (O(N^3) - Ω(N^2))
+- ### Naive minimum spanning tree solver (O(N^3) - Ω(N^2))
   - Implemented as a method of the base graph class allows the findMST() function to be used on any of the above generated graphs.
