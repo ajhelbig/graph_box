@@ -35,6 +35,7 @@ class Graph
 public:
 
 	bool solved = false;
+	int numNodes = 0;
 
 	std::vector<std::vector<Node>> nodes;
 

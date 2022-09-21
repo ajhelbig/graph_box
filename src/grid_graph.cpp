@@ -6,6 +6,8 @@ Grid_Graph::Grid_Graph(const int swidth, const int sheight, int dim, float radiu
 	int width = ( swidth / dim ) - 1;
 	int height = ( sheight / dim ) - 1;
 
+	this->numNodes = (width * height);
+
 	this->nodes.reserve(height);
 
 	//creating nodes

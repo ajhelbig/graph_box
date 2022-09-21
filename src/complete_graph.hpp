@@ -11,7 +11,6 @@ public:
 	int dim;
 	float radius;
 	int seed;
-	int numNodes;
 	bool ngon;
 
 	void buildNGon(std::vector<std::pair<int,int>> &coords);
@@ -20,5 +19,5 @@ public:
 
 	void buildGraph(std::vector<std::pair<int, int>> &coords);
 
-	Complete_Graph(const int swidth, const int sheight, int numNodes, float radius, int seed, int dim, bool ngon);
+	Complete_Graph(const int swidth, const int sheight, int dim, float radius, int seed, bool ngon, int numNodes);
 };

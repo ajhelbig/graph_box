@@ -60,9 +60,11 @@ void Complete_Graph::buildGraph(std::vector<std::pair<int, int>> &coords)
 				this->nodes[0][i].adjLis.push_back(&this->nodes[0][j]);
 }
 
-Complete_Graph::Complete_Graph(const int swidth, const int sheight, int dim, float radius, int seed, int numNodes, bool ngon) : swidth{swidth}, sheight{sheight}, dim{dim}, radius{radius}, seed{seed}, numNodes{numNodes}, ngon{ngon}
+Complete_Graph::Complete_Graph(const int swidth, const int sheight, int dim, float radius, int seed, bool ngon, int numNodes) : swidth{swidth}, sheight{sheight}, dim{dim}, radius{radius}, seed{seed}, ngon{ngon}
 {
 
+	this->numNodes = numNodes;
+	
 	std::vector<std::pair<int,int>> coords;
 	
 	switch(this->ngon)

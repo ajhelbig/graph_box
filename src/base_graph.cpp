@@ -23,6 +23,14 @@ void Node::drawEdges(bool solved)
 
 void Graph::drawGraph()
 {
+
+	if(this->solved)
+	{
+		for(auto row : this->nodes)
+			for(auto node : row)
+				node.drawEdges(!this->solved);
+	}
+
 	for(auto row : this->nodes)
 		for(auto node : row)
 			node.drawEdges(this->solved);
@@ -66,12 +74,8 @@ void Graph::findMST()
 	this->nodes[0][0].visited = true;
 	mst.push_back(&this->nodes[0][0]);
 
-	while(true)
+	while(mst.size() < this->numNodes)
 	{
-
-		if( mst.size() == (nodes.size() * nodes[0].size()) )
-			break;
-
 		//finding the node nearest the mst
 		Node *nearestNode = nullptr;
 		Node *nodeNearest = nullptr;
