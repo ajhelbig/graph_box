@@ -1,7 +1,8 @@
 
 include(FetchContent)
 
-#raylib
+#raylib 4.2.0
+
 
 FetchContent_Declare(
 	raylib
@@ -11,10 +12,10 @@ FetchContent_Declare(
 
 set(CMAKE_BUILD_TYPE "Debug" CACHE STRING "Choose the type of build." FORCE)
 
-set(OPENGL_VERSION "4.3" CACHE STRING "Force a specific OpenGL Version?" FORCE)
+set(OPENGL_VERSION "1.1" CACHE STRING "Force a specific OpenGL Version?" FORCE)
 
 set(PLATFORM "Desktop" CACHE STRING "Platform to build for." FORCE)
 
-#raylib
+#raylib 4.2.0
 
 add_subdirectory(raylib)
