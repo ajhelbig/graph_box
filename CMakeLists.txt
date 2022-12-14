@@ -5,6 +5,8 @@ project(ProjectName
 	LANGUAGES CXX C
 )
 
+include_directories(include)
+
 set(CMAKE_POLICY_DEFAULT_CMP0072 NEW)
 
 set(CMAKE_CXX_STANDARD 11)

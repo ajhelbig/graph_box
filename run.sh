@@ -11,9 +11,11 @@ then
 	cd build
 	cmake ..
 
+
 else
 	mkdir build && cd build
 	cmake ..
+
 fi
 
 echo "----------CONFIG----------"
